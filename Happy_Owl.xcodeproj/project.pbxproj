@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */; };
+		A89178A21A3ED2DB008F35F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178A11A3ED2DB008F35F3 /* ViewController.swift */; };
+		A89178A71A3ED2DB008F35F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89178A61A3ED2DB008F35F3 /* Images.xcassets */; };
+		A89178AA1A3ED2DB008F35F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */; };
+		A89178B61A3ED2DB008F35F3 /* Happy_OwlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178B51A3ED2DB008F35F3 /* Happy_OwlTests.swift */; };
+		A89178C11A3ED352008F35F3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178BF1A3ED352008F35F3 /* Bolts.framework */; };
+		A89178C21A3ED352008F35F3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178C01A3ED352008F35F3 /* Parse.framework */; };
+		A89178C41A3ED373008F35F3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178C31A3ED373008F35F3 /* AudioToolbox.framework */; };
+		A89178C61A3ED379008F35F3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178C51A3ED379008F35F3 /* CFNetwork.framework */; };
+		A89178C81A3ED380008F35F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178C71A3ED380008F35F3 /* CoreGraphics.framework */; };
+		A89178CA1A3ED385008F35F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178C91A3ED385008F35F3 /* CoreLocation.framework */; };
+		A89178CC1A3ED38B008F35F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178CB1A3ED38B008F35F3 /* MobileCoreServices.framework */; };
+		A89178CE1A3ED392008F35F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178CD1A3ED392008F35F3 /* QuartzCore.framework */; };
+		A89178D01A3ED399008F35F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178CF1A3ED399008F35F3 /* Security.framework */; };
+		A89178D21A3ED39F008F35F3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178D11A3ED39F008F35F3 /* StoreKit.framework */; };
+		A89178D41A3ED3A6008F35F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178D31A3ED3A6008F35F3 /* SystemConfiguration.framework */; };
+		A89178D61A3ED3AF008F35F3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178D51A3ED3AF008F35F3 /* libz.dylib */; };
+		A89178D81A3ED3BC008F35F3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178D71A3ED3BC008F35F3 /* libsqlite3.dylib */; };
+		A89178E11A3ED72D008F35F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89178DE1A3ED72D008F35F3 /* Main.storyboard */; };
+		A89178E21A3ED72D008F35F3 /* BarDatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */; };
+		A89178E31A3ED72D008F35F3 /* BarCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A89178B01A3ED2DB008F35F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A89178921A3ED2DB008F35F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A89178991A3ED2DB008F35F3;
+			remoteInfo = Happy_Owl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A891789A1A3ED2DB008F35F3 /* Happy_Owl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy_Owl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A891789E1A3ED2DB008F35F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A89178A11A3ED2DB008F35F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A89178A61A3ED2DB008F35F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A89178A91A3ED2DB008F35F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A89178AF1A3ED2DB008F35F3 /* Happy_OwlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Happy_OwlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A89178B41A3ED2DB008F35F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A89178B51A3ED2DB008F35F3 /* Happy_OwlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_OwlTests.swift; sourceTree = "<group>"; };
+		A89178BF1A3ED352008F35F3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A89178C01A3ED352008F35F3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A89178C31A3ED373008F35F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A89178C51A3ED379008F35F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A89178C71A3ED380008F35F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A89178C91A3ED385008F35F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A89178CB1A3ED38B008F35F3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A89178CD1A3ED392008F35F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A89178CF1A3ED399008F35F3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A89178D11A3ED39F008F35F3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A89178D31A3ED3A6008F35F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A89178D51A3ED3AF008F35F3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A89178D71A3ED3BC008F35F3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A89178D91A3ED3E4008F35F3 /* Happy_Owl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Happy_Owl-Bridging-Header.h"; sourceTree = "<group>"; };
+		A89178DE1A3ED72D008F35F3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDatabaseTableViewController.swift; sourceTree = "<group>"; };
+		A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCardTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A89178971A3ED2DB008F35F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89178D81A3ED3BC008F35F3 /* libsqlite3.dylib in Frameworks */,
+				A89178D61A3ED3AF008F35F3 /* libz.dylib in Frameworks */,
+				A89178D41A3ED3A6008F35F3 /* SystemConfiguration.framework in Frameworks */,
+				A89178D21A3ED39F008F35F3 /* StoreKit.framework in Frameworks */,
+				A89178D01A3ED399008F35F3 /* Security.framework in Frameworks */,
+				A89178CE1A3ED392008F35F3 /* QuartzCore.framework in Frameworks */,
+				A89178CC1A3ED38B008F35F3 /* MobileCoreServices.framework in Frameworks */,
+				A89178CA1A3ED385008F35F3 /* CoreLocation.framework in Frameworks */,
+				A89178C81A3ED380008F35F3 /* CoreGraphics.framework in Frameworks */,
+				A89178C61A3ED379008F35F3 /* CFNetwork.framework in Frameworks */,
+				A89178C41A3ED373008F35F3 /* AudioToolbox.framework in Frameworks */,
+				A89178C21A3ED352008F35F3 /* Parse.framework in Frameworks */,
+				A89178C11A3ED352008F35F3 /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89178AC1A3ED2DB008F35F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A89178911A3ED2DB008F35F3 = {
+			isa = PBXGroup;
+			children = (
+				A89178D71A3ED3BC008F35F3 /* libsqlite3.dylib */,
+				A89178D51A3ED3AF008F35F3 /* libz.dylib */,
+				A89178D31A3ED3A6008F35F3 /* SystemConfiguration.framework */,
+				A89178D11A3ED39F008F35F3 /* StoreKit.framework */,
+				A89178CF1A3ED399008F35F3 /* Security.framework */,
+				A89178CD1A3ED392008F35F3 /* QuartzCore.framework */,
+				A89178CB1A3ED38B008F35F3 /* MobileCoreServices.framework */,
+				A89178C91A3ED385008F35F3 /* CoreLocation.framework */,
+				A89178C71A3ED380008F35F3 /* CoreGraphics.framework */,
+				A89178C51A3ED379008F35F3 /* CFNetwork.framework */,
+				A89178C31A3ED373008F35F3 /* AudioToolbox.framework */,
+				A89178BF1A3ED352008F35F3 /* Bolts.framework */,
+				A89178C01A3ED352008F35F3 /* Parse.framework */,
+				A891789C1A3ED2DB008F35F3 /* Happy_Owl */,
+				A89178B21A3ED2DB008F35F3 /* Happy_OwlTests */,
+				A891789B1A3ED2DB008F35F3 /* Products */,
+				A89178D91A3ED3E4008F35F3 /* Happy_Owl-Bridging-Header.h */,
+			);
+			sourceTree = "<group>";
+		};
+		A891789B1A3ED2DB008F35F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A891789A1A3ED2DB008F35F3 /* Happy_Owl.app */,
+				A89178AF1A3ED2DB008F35F3 /* Happy_OwlTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A891789C1A3ED2DB008F35F3 /* Happy_Owl */ = {
+			isa = PBXGroup;
+			children = (
+				A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */,
+				A89178A11A3ED2DB008F35F3 /* ViewController.swift */,
+				A89178DE1A3ED72D008F35F3 /* Main.storyboard */,
+				A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */,
+				A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */,
+				A89178A61A3ED2DB008F35F3 /* Images.xcassets */,
+				A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */,
+				A891789D1A3ED2DB008F35F3 /* Supporting Files */,
+			);
+			path = Happy_Owl;
+			sourceTree = "<group>";
+		};
+		A891789D1A3ED2DB008F35F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A891789E1A3ED2DB008F35F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A89178B21A3ED2DB008F35F3 /* Happy_OwlTests */ = {
+			isa = PBXGroup;
+			children = (
+				A89178B51A3ED2DB008F35F3 /* Happy_OwlTests.swift */,
+				A89178B31A3ED2DB008F35F3 /* Supporting Files */,
+			);
+			path = Happy_OwlTests;
+			sourceTree = "<group>";
+		};
+		A89178B31A3ED2DB008F35F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A89178B41A3ED2DB008F35F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A89178991A3ED2DB008F35F3 /* Happy_Owl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A89178B91A3ED2DB008F35F3 /* Build configuration list for PBXNativeTarget "Happy_Owl" */;
+			buildPhases = (
+				A89178961A3ED2DB008F35F3 /* Sources */,
+				A89178971A3ED2DB008F35F3 /* Frameworks */,
+				A89178981A3ED2DB008F35F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Happy_Owl;
+			productName = Happy_Owl;
+			productReference = A891789A1A3ED2DB008F35F3 /* Happy_Owl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A89178AE1A3ED2DB008F35F3 /* Happy_OwlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A89178BC1A3ED2DB008F35F3 /* Build configuration list for PBXNativeTarget "Happy_OwlTests" */;
+			buildPhases = (
+				A89178AB1A3ED2DB008F35F3 /* Sources */,
+				A89178AC1A3ED2DB008F35F3 /* Frameworks */,
+				A89178AD1A3ED2DB008F35F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A89178B11A3ED2DB008F35F3 /* PBXTargetDependency */,
+			);
+			name = Happy_OwlTests;
+			productName = Happy_OwlTests;
+			productReference = A89178AF1A3ED2DB008F35F3 /* Happy_OwlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A89178921A3ED2DB008F35F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Agustiadi;
+				TargetAttributes = {
+					A89178991A3ED2DB008F35F3 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					A89178AE1A3ED2DB008F35F3 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = A89178991A3ED2DB008F35F3;
+					};
+				};
+			};
+			buildConfigurationList = A89178951A3ED2DB008F35F3 /* Build configuration list for PBXProject "Happy_Owl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A89178911A3ED2DB008F35F3;
+			productRefGroup = A891789B1A3ED2DB008F35F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A89178991A3ED2DB008F35F3 /* Happy_Owl */,
+				A89178AE1A3ED2DB008F35F3 /* Happy_OwlTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A89178981A3ED2DB008F35F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89178E11A3ED72D008F35F3 /* Main.storyboard in Resources */,
+				A89178AA1A3ED2DB008F35F3 /* LaunchScreen.xib in Resources */,
+				A89178A71A3ED2DB008F35F3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89178AD1A3ED2DB008F35F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A89178961A3ED2DB008F35F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89178A21A3ED2DB008F35F3 /* ViewController.swift in Sources */,
+				A89178E21A3ED72D008F35F3 /* BarDatabaseTableViewController.swift in Sources */,
+				A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */,
+				A89178E31A3ED72D008F35F3 /* BarCardTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A89178AB1A3ED2DB008F35F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A89178B61A3ED2DB008F35F3 /* Happy_OwlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A89178B11A3ED2DB008F35F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A89178991A3ED2DB008F35F3 /* Happy_Owl */;
+			targetProxy = A89178B01A3ED2DB008F35F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A89178A91A3ED2DB008F35F3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A89178B71A3ED2DB008F35F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A89178B81A3ED2DB008F35F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A89178BA1A3ED2DB008F35F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Happy_Owl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy_Owl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A89178BB1A3ED2DB008F35F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Happy_Owl/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy_Owl-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		A89178BD1A3ED2DB008F35F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Happy_OwlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happy_Owl.app/Happy_Owl";
+			};
+			name = Debug;
+		};
+		A89178BE1A3ED2DB008F35F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Happy_OwlTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Happy_Owl.app/Happy_Owl";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A89178951A3ED2DB008F35F3 /* Build configuration list for PBXProject "Happy_Owl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89178B71A3ED2DB008F35F3 /* Debug */,
+				A89178B81A3ED2DB008F35F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A89178B91A3ED2DB008F35F3 /* Build configuration list for PBXNativeTarget "Happy_Owl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89178BA1A3ED2DB008F35F3 /* Debug */,
+				A89178BB1A3ED2DB008F35F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A89178BC1A3ED2DB008F35F3 /* Build configuration list for PBXNativeTarget "Happy_OwlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A89178BD1A3ED2DB008F35F3 /* Debug */,
+				A89178BE1A3ED2DB008F35F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A89178921A3ED2DB008F35F3 /* Project object */;
+}
