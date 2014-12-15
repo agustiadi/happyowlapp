@@ -159,7 +159,7 @@
                             <outlet property="delegate" destination="gb4-sQ-9PB" id="GeJ-jC-eog"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="13S-uS-E3w"/>
+                    <navigationItem key="navigationItem" title="Happy Owl" id="13S-uS-E3w"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EoK-0K-mXE" userLabel="First Responder" sceneMemberID="firstResponder"/>

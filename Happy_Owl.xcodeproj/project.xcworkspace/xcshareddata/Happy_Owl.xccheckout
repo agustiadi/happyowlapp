@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1FE871FE-F529-425B-90C1-757C35852F21</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Happy_Owl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3355EEEAED5C93A5AA58A5DCCDB02368FBBBB4C5</key>
+		<string>https://github.com/agustiadi/happyowlapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Happy_Owl.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3355EEEAED5C93A5AA58A5DCCDB02368FBBBB4C5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/agustiadi/happyowlapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3355EEEAED5C93A5AA58A5DCCDB02368FBBBB4C5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3355EEEAED5C93A5AA58A5DCCDB02368FBBBB4C5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>happyowlapp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
