@@ -244,17 +244,17 @@ class BarDatabaseTableViewController: UITableViewController {
     
     func secToTimeConverter(seconds:Int) -> (hour: Int, min: Int) {
         
-        var rawTime = Float(seconds)
+        var rawTime = Double(seconds)
         
-        var floatHour: Float = Float()
+        var floatHour: Double = Double()
         var hour: Int = Int()
-        var floatMin: Float = Float()
+        var floatMin: Double = Double()
         var min: Int = Int()
         
         floatHour = (rawTime / 3600)
         hour = Int(floatHour)
         
-        floatMin = ((rawTime / 3600) - Float(hour)) * 60
+        floatMin = ((rawTime / 3600) - Double(hour)) * 60
         min = Int(floatMin)
         
         return (hour, min)
