@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6214" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6207"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Champagne &amp; Limousines.ttf">
+            <string>Champagne&amp;Limousines</string>
+            <string>Champagne&amp;Limousines</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -11,31 +16,62 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014 Agustiadi. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Happy Owl" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dkk-9h-uQ1">
+                    <rect key="frame" x="81" y="153" width="161" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="161" id="SGw-ED-JMq"/>
+                        <constraint firstAttribute="height" constant="41" id="sIA-s4-7zY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="38"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy_Owl" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="20" y="140" width="441" height="43"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2i4-ve-7av">
+                    <rect key="frame" x="1" y="397" width="330" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="lMa-DR-eSZ"/>
+                        <constraint firstAttribute="width" constant="330" id="xEA-tp-O5Y"/>
+                    </constraints>
+                    <string key="text">Discover happy hours and 
+cheers till you are Happy Owls</string>
+                    <fontDescription key="fontDescription" name="Champagne&amp;Limousines" family="Champagne &amp; Limousines" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="zFI-Zo-QDl">
+                    <rect key="frame" x="35" y="231" width="262" height="148"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="262" id="5ny-hX-Kib"/>
+                        <constraint firstAttribute="height" constant="148" id="Blm-cd-z2V"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mascot_pink" translatesAutoresizingMaskIntoConstraints="NO" id="5ef-SO-0ay">
+                    <rect key="frame" x="66" y="264" width="200" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="84" id="beA-Y1-5Yt"/>
+                        <constraint firstAttribute="width" constant="200" id="fzM-YZ-Byg"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.23921568627450981" green="0.45098039215686275" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="bottom" multiplier="1/3" constant="1" id="5cJ-9S-tgC"/>
-                <constraint firstAttribute="centerX" secondItem="kId-c2-rCX" secondAttribute="centerX" id="Koa-jz-hwk"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstItem="kId-c2-rCX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fvb-Df-36g"/>
+                <constraint firstItem="zFI-Zo-QDl" firstAttribute="top" secondItem="dkk-9h-uQ1" secondAttribute="bottom" constant="37" id="5gE-Sm-hvk"/>
+                <constraint firstAttribute="centerX" secondItem="2i4-ve-7av" secondAttribute="centerX" id="7Co-QA-7AX"/>
+                <constraint firstAttribute="centerX" secondItem="5ef-SO-0ay" secondAttribute="centerX" id="F1i-wE-iZE"/>
+                <constraint firstAttribute="centerX" secondItem="zFI-Zo-QDl" secondAttribute="centerX" id="FMs-Qx-1eB"/>
+                <constraint firstAttribute="centerX" secondItem="dkk-9h-uQ1" secondAttribute="centerX" id="YWh-Lh-s0A"/>
+                <constraint firstItem="5ef-SO-0ay" firstAttribute="top" secondItem="dkk-9h-uQ1" secondAttribute="bottom" constant="70" id="YzI-B4-JYg"/>
+                <constraint firstItem="2i4-ve-7av" firstAttribute="top" secondItem="zFI-Zo-QDl" secondAttribute="bottom" constant="18" id="bXZ-Xb-SyT"/>
+                <constraint firstItem="dkk-9h-uQ1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="153" id="nuY-Bl-DUa"/>
+                <constraint firstItem="dkk-9h-uQ1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="155" id="ucV-Xj-aLX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="circle" width="125" height="123"/>
+        <image name="mascot_pink" width="90" height="96"/>
+    </resources>
 </document>

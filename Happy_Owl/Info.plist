@@ -30,6 +30,13 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Champagne &amp; Limousines Bold Italic.ttf</string>
+		<string>Champagne &amp; Limousines Bold.ttf</string>
+		<string>Champagne &amp; Limousines.ttf</string>
+		<string>Champagne &amp; Limousines Italic.ttf</string>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

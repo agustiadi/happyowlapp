@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FB09F581A610AE6008C4790 /* Champagne & Limousines Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F541A610AE6008C4790 /* Champagne & Limousines Bold Italic.ttf */; };
+		2FB09F591A610AE6008C4790 /* Champagne & Limousines Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F551A610AE6008C4790 /* Champagne & Limousines Bold.ttf */; };
+		2FB09F5A1A610AE6008C4790 /* Champagne & Limousines Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F561A610AE6008C4790 /* Champagne & Limousines Italic.ttf */; };
+		2FB09F5B1A610AE6008C4790 /* Champagne & Limousines.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F571A610AE6008C4790 /* Champagne & Limousines.ttf */; };
 		A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */; };
 		A89178A21A3ED2DB008F35F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178A11A3ED2DB008F35F3 /* ViewController.swift */; };
 		A89178A71A3ED2DB008F35F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89178A61A3ED2DB008F35F3 /* Images.xcassets */; };
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FB09F541A610AE6008C4790 /* Champagne & Limousines Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Bold Italic.ttf"; sourceTree = "<group>"; };
+		2FB09F551A610AE6008C4790 /* Champagne & Limousines Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Bold.ttf"; sourceTree = "<group>"; };
+		2FB09F561A610AE6008C4790 /* Champagne & Limousines Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Italic.ttf"; sourceTree = "<group>"; };
+		2FB09F571A610AE6008C4790 /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines.ttf"; sourceTree = "<group>"; };
 		A891789A1A3ED2DB008F35F3 /* Happy_Owl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy_Owl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A891789E1A3ED2DB008F35F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +108,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FB09F4E1A6109EE008C4790 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2FB09F4F1A6109F8008C4790 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2FB09F4F1A6109F8008C4790 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2FB09F541A610AE6008C4790 /* Champagne & Limousines Bold Italic.ttf */,
+				2FB09F551A610AE6008C4790 /* Champagne & Limousines Bold.ttf */,
+				2FB09F561A610AE6008C4790 /* Champagne & Limousines Italic.ttf */,
+				2FB09F571A610AE6008C4790 /* Champagne & Limousines.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		A89178911A3ED2DB008F35F3 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +162,7 @@
 		A891789C1A3ED2DB008F35F3 /* Happy_Owl */ = {
 			isa = PBXGroup;
 			children = (
+				2FB09F4E1A6109EE008C4790 /* Resources */,
 				A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */,
 				A89178A11A3ED2DB008F35F3 /* ViewController.swift */,
 				A89178DE1A3ED72D008F35F3 /* Main.storyboard */,
@@ -252,9 +280,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB09F591A610AE6008C4790 /* Champagne & Limousines Bold.ttf in Resources */,
+				2FB09F5A1A610AE6008C4790 /* Champagne & Limousines Italic.ttf in Resources */,
 				A89178E11A3ED72D008F35F3 /* Main.storyboard in Resources */,
 				A89178AA1A3ED2DB008F35F3 /* LaunchScreen.xib in Resources */,
+				2FB09F5B1A610AE6008C4790 /* Champagne & Limousines.ttf in Resources */,
 				A89178A71A3ED2DB008F35F3 /* Images.xcassets in Resources */,
+				2FB09F581A610AE6008C4790 /* Champagne & Limousines Bold Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +504,7 @@
 				A89178BB1A3ED2DB008F35F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A89178BC1A3ED2DB008F35F3 /* Build configuration list for PBXNativeTarget "Happy_OwlTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +513,7 @@
 				A89178BE1A3ED2DB008F35F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
