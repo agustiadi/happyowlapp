@@ -2,7 +2,7 @@
 //  BarDetailsViewController.swift
 //  Happy_Owl
 //
-//  Created by Agustiadi on 20/1/15.
+//  Created by Agustiadi on 21/1/15.
 //  Copyright (c) 2015 Agustiadi. All rights reserved.
 //
 
