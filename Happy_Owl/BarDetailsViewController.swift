@@ -9,11 +9,16 @@
 import UIKit
 
 class BarDetailsViewController: UIViewController {
+    
+    var establishmentName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        println(establishmentName)
+        
     }
 
     override func didReceiveMemoryWarning() {

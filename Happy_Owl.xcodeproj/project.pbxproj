@@ -11,8 +11,8 @@
 		2FB09F591A610AE6008C4790 /* Champagne & Limousines Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F551A610AE6008C4790 /* Champagne & Limousines Bold.ttf */; };
 		2FB09F5A1A610AE6008C4790 /* Champagne & Limousines Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F561A610AE6008C4790 /* Champagne & Limousines Italic.ttf */; };
 		2FB09F5B1A610AE6008C4790 /* Champagne & Limousines.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FB09F571A610AE6008C4790 /* Champagne & Limousines.ttf */; };
+		A8141D2C1A6EB340005ECF9E /* BarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8141D2B1A6EB340005ECF9E /* BarDetailsViewController.swift */; };
 		A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */; };
-		A89178A21A3ED2DB008F35F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178A11A3ED2DB008F35F3 /* ViewController.swift */; };
 		A89178A71A3ED2DB008F35F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A89178A61A3ED2DB008F35F3 /* Images.xcassets */; };
 		A89178AA1A3ED2DB008F35F3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */; };
 		A89178B61A3ED2DB008F35F3 /* Happy_OwlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178B51A3ED2DB008F35F3 /* Happy_OwlTests.swift */; };
@@ -49,10 +49,10 @@
 		2FB09F551A610AE6008C4790 /* Champagne & Limousines Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Bold.ttf"; sourceTree = "<group>"; };
 		2FB09F561A610AE6008C4790 /* Champagne & Limousines Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines Italic.ttf"; sourceTree = "<group>"; };
 		2FB09F571A610AE6008C4790 /* Champagne & Limousines.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Champagne & Limousines.ttf"; sourceTree = "<group>"; };
+		A8141D2B1A6EB340005ECF9E /* BarDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDetailsViewController.swift; sourceTree = "<group>"; };
 		A891789A1A3ED2DB008F35F3 /* Happy_Owl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy_Owl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A891789E1A3ED2DB008F35F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A89178A11A3ED2DB008F35F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A89178A61A3ED2DB008F35F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A89178A91A3ED2DB008F35F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A89178AF1A3ED2DB008F35F3 /* Happy_OwlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Happy_OwlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,10 +164,10 @@
 			children = (
 				2FB09F4E1A6109EE008C4790 /* Resources */,
 				A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */,
-				A89178A11A3ED2DB008F35F3 /* ViewController.swift */,
 				A89178DE1A3ED72D008F35F3 /* Main.storyboard */,
 				A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */,
 				A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */,
+				A8141D2B1A6EB340005ECF9E /* BarDetailsViewController.swift */,
 				A89178A61A3ED2DB008F35F3 /* Images.xcassets */,
 				A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */,
 				A891789D1A3ED2DB008F35F3 /* Supporting Files */,
@@ -304,10 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A89178A21A3ED2DB008F35F3 /* ViewController.swift in Sources */,
 				A89178E21A3ED72D008F35F3 /* BarDatabaseTableViewController.swift in Sources */,
 				A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */,
 				A89178E31A3ED72D008F35F3 /* BarCardTableViewCell.swift in Sources */,
+				A8141D2C1A6EB340005ECF9E /* BarDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

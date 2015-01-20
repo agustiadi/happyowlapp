@@ -59,7 +59,7 @@ class BarDatabaseTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 350
+        return 150
     }
 
     
@@ -68,197 +68,32 @@ class BarDatabaseTableViewController: UITableViewController {
         
         cell.nameOfBar.text = barName[indexPath.row]
         
-        var ohQuery = PFQuery(className: "OpeningHours")
-        ohQuery.whereKey("parent", equalTo: barID[indexPath.row])
-        ohQuery.findObjectsInBackgroundWithBlock {
-            (objects: [AnyObject]!, error: NSError!) -> Void in
-            
-            if error == nil {
-                for object in objects {
-                    
-                    switch object["day"] as String {
-                        
-                        case "Monday" :
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.monday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.monday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.monday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.monday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                            }
-                        case "Tuesday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.tuesday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.tuesday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.tuesday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.tuesday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Wednesday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.wednesday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.wednesday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.wednesday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.wednesday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Thursday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.thursday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.thursday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.thursday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.thursday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Friday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.friday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.friday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.friday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.friday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Saturday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.saturday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.saturday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.saturday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.saturday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Sunday":
-                            
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.sunday.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.sunday.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.sunday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.sunday.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Public Holiday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.pH.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.pH.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.pH.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.pH.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-
-                        case "Eve of Public Holiday":
-                            let startingTime = self.secToTimeConverter(object["fromHour"] as Int)
-                            let endTime = self.secToTimeConverter(object["toHour"] as Int)
-                            if startingTime.min == 0 && endTime.min == 0 {
-                                
-                                cell.evePH.text = "\(startingTime.hour):00 to \(endTime.hour):00"
-                            } else {
-                                if startingTime.min == 0 {
-                                    cell.evePH.text = "\(startingTime.hour):00 to \(endTime.hour):\(endTime.min)"
-                                } else if endTime.min == 0 {
-                                    cell.evePH.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):00"
-                                } else {
-                                    cell.evePH.text = "\(startingTime.hour):\(startingTime.min) to \(endTime.hour):\(endTime.min)"
-                                }
-                        }
-                        default:
-                            println("There is an error in the database")
-                        
-                    }
-                    
-                    
-
-                }
-                
-                
-            } else {
-                println(error)
-            }
-            
-            
-        }
-        
-
         return cell
     }
     
-    func secToTimeConverter(seconds:Int) -> (hour: Int, min: Int) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var rawTime = Double(seconds)
-        
-        var floatHour: Double = Double()
-        var hour: Int = Int()
-        var floatMin: Double = Double()
-        var min: Int = Int()
-        
-        floatHour = (rawTime / 3600)
-        hour = Int(floatHour)
-        
-        floatMin = ((rawTime / 3600) - Double(hour)) * 60
-        min = Int(floatMin)
-        
-        return (hour, min)
+        if (segue.identifier == "details") {
+            
+            let vc: BarDetailsViewController = segue.destinationViewController as BarDetailsViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            vc.establishmentName = barName[indexPath!.row]
+            
+        }
+    
     }
+    
+
+
+
+        
+        
+    }
+    
+
+
+
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -305,4 +140,3 @@ class BarDatabaseTableViewController: UITableViewController {
     }
     */
 
-}
