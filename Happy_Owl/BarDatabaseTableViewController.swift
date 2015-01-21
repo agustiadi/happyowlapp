@@ -12,7 +12,7 @@ class BarDatabaseTableViewController: UITableViewController {
     
     var barName = [String]()
     
-    var barID = [PFObject]()
+    var barIDs = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class BarDatabaseTableViewController: UITableViewController {
                 for object in objects {
                     
                     self.barName.append(object["name"] as String)
-                    self.barID.append(object as PFObject)
+                    self.barIDs.append(object as PFObject)
 
                 }
                 
@@ -77,7 +77,8 @@ class BarDatabaseTableViewController: UITableViewController {
             
             let vc: BarDetailsViewController = segue.destinationViewController as BarDetailsViewController
             let indexPath = self.tableView.indexPathForSelectedRow()
-            vc.establishmentName = barName[indexPath!.row]
+            vc.barID = barIDs[indexPath!.row]
+            
             
         }
     

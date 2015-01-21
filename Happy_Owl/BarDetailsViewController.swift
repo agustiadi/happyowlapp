@@ -10,15 +10,14 @@ import UIKit
 
 class BarDetailsViewController: UIViewController {
     
-    var establishmentName: String = ""
+    var barID = NSObject()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        println(establishmentName)
-        
+        println(barID)
     }
 
     override func didReceiveMemoryWarning() {
