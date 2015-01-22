@@ -79,7 +79,6 @@ class BarDatabaseTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPathForSelectedRow()
             vc.barID = barIDs[indexPath!.row]
             
-            
         }
     
     }

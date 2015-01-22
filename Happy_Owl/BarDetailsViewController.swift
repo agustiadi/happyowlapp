@@ -12,12 +12,24 @@ class BarDetailsViewController: UIViewController {
     
     var barID = NSObject()
 
+    @IBOutlet weak var barName: UILabel!
+    @IBOutlet weak var barAddress: UILabel!
+    @IBOutlet weak var barRegion: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        println(barID)
+        let barName2 = self.barID.valueForKey("name") as? String
+        let address = self.barID.valueForKey("address_1") as? String
+        let region = self.barID.valueForKey("region") as? String
+        
+        self.barName.text = barName2
+        self.barAddress.text = address
+        self.barRegion.text = region
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
