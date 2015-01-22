@@ -87,7 +87,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
     
     func buttonTouched(){
        
-        let googleSGMapString = "http://map.google.com.sg/?q="
+        let googleSGMapString = "http://map.google.com.sg/?daddr="
         let addressString = self.barID.valueForKey("address_1") as? String
        
         let urlString = addressString!.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
