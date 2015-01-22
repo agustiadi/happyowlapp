@@ -31,7 +31,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         self.barAddress.text = address
         self.barRegion.text = region
         
-        println(barID)
+        //println(barID)
         
         // Map Information
         
@@ -55,12 +55,49 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
     
         
     }
+    
+    // Add "Direction" button on the Map Annotation
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        let reuseID = "pin"
+        var anno = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID) as? MKPinAnnotationView
+        
+        if anno == nil {
+            anno = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+            anno!.canShowCallout = true
+            anno!.animatesDrop = true
+            
+            // "Direction" button
+            let btn = UIButton(frame: CGRectMake(0, 0, 100.0, anno!.bounds.height))
+            btn.setTitle("Directions", forState: UIControlState.Normal)
+            btn.backgroundColor = UIColor.blackColor()
+            btn.addTarget(self, action: "buttonTouched", forControlEvents: UIControlEvents.TouchUpInside)
+            
+            anno!.rightCalloutAccessoryView = btn
+        }
+        return anno
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Opening the Google Map when the "Directions" button is pressed
+    
+    func buttonTouched(){
+       
+        let googleSGMapString = "http://map.google.com.sg/?q="
+        let addressString = self.barID.valueForKey("address_1") as? String
+       
+        let urlString = addressString!.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+       
+        let mapURLString = googleSGMapString + urlString
+        let mapURL = NSURL(string: mapURLString)
+        
+        UIApplication.sharedApplication().openURL(mapURL!)
+        
+    }
 
     /*
     // MARK: - Navigation
