@@ -24,10 +24,15 @@ class BarDetailsViewController: UIViewController {
         let barName2 = self.barID.valueForKey("name") as? String
         let address = self.barID.valueForKey("address_1") as? String
         let region = self.barID.valueForKey("region") as? String
+        let geoPoint: PFGeoPoint = self.barID.valueForKey("LatLong") as PFGeoPoint
+       
+        println(barID)
         
         self.barName.text = barName2
         self.barAddress.text = address
         self.barRegion.text = region
+        
+        println(geoPoint)
         
         
     }
