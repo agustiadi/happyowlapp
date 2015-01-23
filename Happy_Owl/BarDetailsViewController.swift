@@ -18,9 +18,19 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
         // Bar Basic Information
         let barName2 = self.barID.valueForKey("name") as? String
-        let address = self.barID.valueForKey("address_1") as? String
         let region = self.barID.valueForKey("region") as? String
+        let phone = self.barID.valueForKey("phone") as? Int
         let geoPoint: PFGeoPoint = self.barID.valueForKey("LatLong") as PFGeoPoint
+        
+        let address1 = self.barID.valueForKey("address_1") as? String
+        let address2 = self.barID.valueForKey("address_2") as? String
+        var address: String
+        
+        if address2 == nil || address2 == "" {
+            address = address1!
+        } else {
+            address = "\(address1!), \(address2!)"
+        }
         
         
         // Y-position of all the views on this BarDetailsViewController
@@ -35,14 +45,14 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
         // Bar Image View
         let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 180))
-        //barImageView.image = UIImage(named: "testimage")
-        //barImageView.clipsToBounds = true
-        barImageView.backgroundColor = UIColor.redColor()
+        barImageView.image = UIImage(named: "testimage")
+        barImageView.clipsToBounds = true
+        barImageView.contentMode = UIViewContentMode.ScaleAspectFill
         
         // Bar Name Label View
         let nameLabel = UILabel(frame: CGRectMake(0, nameY, self.view.frame.width, 50))
         nameLabel.text = "   \(barName2!)"
-        nameLabel.backgroundColor = UIColor.blueColor()
+        nameLabel.backgroundColor = UIColor.blackColor()
         nameLabel.textColor = UIColor.whiteColor()
         
         // Happy Hour Collection View
@@ -55,8 +65,21 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
         // Bar Basic Info View
         let basicInfoView = UIView(frame: CGRectMake(0, infoY, self.view.frame.width, 150))
-        basicInfoView.backgroundColor = UIColor.blackColor()
         
+        let addressLabel = UILabel(frame: CGRectMake(20, 15, self.view.frame.width, 30))
+        addressLabel.text = "Address: \(address)"
+        
+        let regionLabel = UILabel(frame: CGRectMake(20, 55, self.view.frame.width, 30))
+        regionLabel.text = "Region: \(region!), Singapore"
+        
+        let phoneLabel = UILabel(frame: CGRectMake(20, 100, self.view.frame.width, 30))
+        phoneLabel.text = "Phone: +65 \(String(phone!))"
+        
+        
+        basicInfoView.addSubview(addressLabel)
+        basicInfoView.addSubview(regionLabel)
+        basicInfoView.addSubview(phoneLabel)
+    
         // Map View
         
         let map = MKMapView(frame: CGRectMake(0, mapY, self.view.frame.width, 250))
