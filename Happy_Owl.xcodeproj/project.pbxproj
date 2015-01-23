@@ -31,7 +31,6 @@
 		A89178D81A3ED3BC008F35F3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A89178D71A3ED3BC008F35F3 /* libsqlite3.dylib */; };
 		A89178E11A3ED72D008F35F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A89178DE1A3ED72D008F35F3 /* Main.storyboard */; };
 		A89178E21A3ED72D008F35F3 /* BarDatabaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */; };
-		A89178E31A3ED72D008F35F3 /* BarCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		A89178D91A3ED3E4008F35F3 /* Happy_Owl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Happy_Owl-Bridging-Header.h"; sourceTree = "<group>"; };
 		A89178DE1A3ED72D008F35F3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarDatabaseTableViewController.swift; sourceTree = "<group>"; };
-		A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCardTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +164,6 @@
 				A891789F1A3ED2DB008F35F3 /* AppDelegate.swift */,
 				A89178DE1A3ED72D008F35F3 /* Main.storyboard */,
 				A89178DF1A3ED72D008F35F3 /* BarDatabaseTableViewController.swift */,
-				A89178E01A3ED72D008F35F3 /* BarCardTableViewCell.swift */,
 				A8141D2B1A6EB340005ECF9E /* BarDetailsViewController.swift */,
 				A89178A61A3ED2DB008F35F3 /* Images.xcassets */,
 				A89178A81A3ED2DB008F35F3 /* LaunchScreen.xib */,
@@ -306,7 +303,6 @@
 			files = (
 				A89178E21A3ED72D008F35F3 /* BarDatabaseTableViewController.swift in Sources */,
 				A89178A01A3ED2DB008F35F3 /* AppDelegate.swift in Sources */,
-				A89178E31A3ED72D008F35F3 /* BarCardTableViewCell.swift in Sources */,
 				A8141D2C1A6EB340005ECF9E /* BarDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

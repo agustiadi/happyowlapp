@@ -64,9 +64,24 @@ class BarDatabaseTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: BarCardTableViewCell = tableView.dequeueReusableCellWithIdentifier("card", forIndexPath: indexPath) as BarCardTableViewCell
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("card", forIndexPath: indexPath) as UITableViewCell
         
-        cell.nameOfBar.text = barName[indexPath.row]
+        let cellName = UILabel(frame: CGRectMake(0, (cell.frame.height/2)-25, cell.frame.width, 50))
+        cellName.backgroundColor = UIColor.blackColor()
+        cellName.alpha = 0.75
+        cellName.text = barName[indexPath.row]
+        cellName.textAlignment = NSTextAlignment.Center
+        cellName.textColor = UIColor.whiteColor()
+    
+        let cellImage = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height-2))
+        cellImage.image = UIImage(named: "testimage")
+        cellImage.clipsToBounds = true
+        cellImage.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        cell.backgroundColor = UIColor.whiteColor()
+        
+        cell.addSubview(cellImage)
+        cell.addSubview(cellName)
         
         return cell
     }
