@@ -12,30 +12,54 @@ import MapKit
 class BarDetailsViewController: UIViewController, MKMapViewDelegate {
     
     var barID = NSObject()
-
-    @IBOutlet weak var barName: UILabel!
-    @IBOutlet weak var barAddress: UILabel!
-    @IBOutlet weak var barRegion: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Bar Information
         
+        // Bar Basic Information
         let barName2 = self.barID.valueForKey("name") as? String
         let address = self.barID.valueForKey("address_1") as? String
         let region = self.barID.valueForKey("region") as? String
         let geoPoint: PFGeoPoint = self.barID.valueForKey("LatLong") as PFGeoPoint
         
-        self.barName.text = barName2
-        self.barAddress.text = address
-        self.barRegion.text = region
         
-        //println(barID)
+        // Y-position of all the views on this BarDetailsViewController
+        let navH = self.navigationController?.navigationBar.frame.height
+        let imageY = navH! + 20
+        let nameY = imageY + 180
+        let happyHourY = nameY + 50
+        let additionalInfoY = happyHourY + 100
+        let infoY = additionalInfoY + 80
+        let mapY = infoY + 150
         
-        // Map Information
         
-        let map = MKMapView(frame: CGRectMake(0, 220, self.view.frame.width, 250))
+        // Bar Image View
+        let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 180))
+        //barImageView.image = UIImage(named: "testimage")
+        //barImageView.clipsToBounds = true
+        barImageView.backgroundColor = UIColor.redColor()
+        
+        // Bar Name Label View
+        let nameLabel = UILabel(frame: CGRectMake(0, nameY, self.view.frame.width, 50))
+        nameLabel.text = "   \(barName2!)"
+        nameLabel.backgroundColor = UIColor.blueColor()
+        nameLabel.textColor = UIColor.whiteColor()
+        
+        // Happy Hour Collection View
+        let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
+        happyHourCollectionView.backgroundColor = UIColor.yellowColor()
+        
+        // Additional Info of Bar Collection View
+        let additionalInfoCollectionView = UIView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 80))
+        additionalInfoCollectionView.backgroundColor = UIColor.greenColor()
+        
+        // Bar Basic Info View
+        let basicInfoView = UIView(frame: CGRectMake(0, infoY, self.view.frame.width, 150))
+        basicInfoView.backgroundColor = UIColor.blackColor()
+        
+        // Map View
+        
+        let map = MKMapView(frame: CGRectMake(0, mapY, self.view.frame.width, 250))
         map.delegate = self
         
         let point = MKPointAnnotation()
@@ -51,11 +75,21 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         zone.span.longitudeDelta = 0.01
         map.setRegion(zone, animated: false)
         
-        self.view.addSubview(map)
-    
+        // Setting up Scroll View
+        let scrollView = UIScrollView(frame: CGRectMake(0, -imageY, self.view.frame.width, self.view.frame.height + imageY))
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: mapY + 250)
+        scrollView.addSubview(barImageView)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(happyHourCollectionView)
+        scrollView.addSubview(additionalInfoCollectionView)
+        scrollView.addSubview(basicInfoView)
+        scrollView.addSubview(map)
+        
+        self.view.addSubview(scrollView)
         
     }
-    
+
+        
     // Add "Direction" button on the Map Annotation
     
     func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
