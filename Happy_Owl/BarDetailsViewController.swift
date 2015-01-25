@@ -45,7 +45,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
         // Bar Image View
         let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 180))
-        barImageView.image = UIImage(named: "testimage")
+        self.getBarCellImage(barID as PFObject, imageView: barImageView)
         barImageView.clipsToBounds = true
         barImageView.contentMode = UIViewContentMode.ScaleAspectFill
         
@@ -153,6 +153,38 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         let mapURL = NSURL(string: mapURLString)
         
         UIApplication.sharedApplication().openURL(mapURL!)
+        
+    }
+    
+    func getBarCellImage(bar: PFObject, imageView: UIImageView){
+        
+        // Extracting Bar Cell Image from Parse
+        var imageQuery = PFQuery(className: "PhotoGallery")
+        imageQuery.whereKey("parent", equalTo: bar)
+        imageQuery.findObjectsInBackgroundWithBlock ({
+            (imageObjects: [AnyObject]!, imageError: NSError!) -> Void in
+            
+            if imageError == nil {
+                for imageObject in imageObjects {
+                    
+                    // Extracting UIImage from PFFile
+                    let imageFile = imageObject["imageFile"] as PFFile
+                    imageFile.getDataInBackgroundWithBlock{
+                        (imageData: NSData!, error: NSError!) -> Void in
+                        
+                        if error == nil {
+                            let image = UIImage(data: imageData)
+                            imageView.image = image
+                        }else {
+                            println(error)
+                        }
+                    }
+                    
+                }
+                
+            }else {
+                println(imageError)}
+        })
         
     }
 
