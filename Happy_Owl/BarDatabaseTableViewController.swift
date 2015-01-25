@@ -73,10 +73,24 @@ class BarDatabaseTableViewController: UITableViewController {
         cellName.textColor = UIColor.whiteColor()
         
         let cellImage = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height-2))
+        let barID = barIDs[indexPath.row]
+        self.getBarCellImage(barID, imageView: cellImage)
+        cellImage.clipsToBounds = true
+        cellImage.contentMode = UIViewContentMode.ScaleAspectFill
     
+        cell.backgroundColor = UIColor.whiteColor()
+        
+        cell.addSubview(cellImage)
+        cell.addSubview(cellName)
+        
+        return cell
+    }
+    
+    func getBarCellImage(bar: PFObject, imageView: UIImageView){
+        
         // Extracting Bar Cell Image from Parse
         var imageQuery = PFQuery(className: "PhotoGallery")
-        imageQuery.whereKey("parent", equalTo: barIDs[indexPath.row])
+        imageQuery.whereKey("parent", equalTo: bar)
         imageQuery.findObjectsInBackgroundWithBlock ({
             (imageObjects: [AnyObject]!, imageError: NSError!) -> Void in
             
@@ -90,30 +104,19 @@ class BarDatabaseTableViewController: UITableViewController {
                         
                         if error == nil {
                             let image = UIImage(data: imageData)
-                            cellImage.image = image
+                            imageView.image = image
                         }else {
                             println(error)
                         }
                     }
-
+                    
                 }
                 
             }else {
                 println(imageError)}
         })
-
-        //cellImage.image = UIImage(named: "testimage")
-        cellImage.clipsToBounds = true
-        cellImage.contentMode = UIViewContentMode.ScaleAspectFill
-    
-        cell.backgroundColor = UIColor.whiteColor()
         
-        cell.addSubview(cellImage)
-        cell.addSubview(cellName)
-        
-        return cell
     }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
