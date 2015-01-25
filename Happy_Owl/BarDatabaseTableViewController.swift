@@ -11,36 +11,35 @@ import UIKit
 class BarDatabaseTableViewController: UITableViewController {
     
     var barName = [String]()
-    
     var barIDs = [PFObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var query = PFQuery(className:"Establishment")
-        //query.whereKey("playerName", equalTo:"Sean Plott")
-        query.findObjectsInBackgroundWithBlock {
+        query.findObjectsInBackgroundWithBlock ({
             (objects: [AnyObject]!, error: NSError!) -> Void in
             
+            // Reset Array
             self.barName.removeAll(keepCapacity: true)
+            self.barIDs.removeAll(keepCapacity: true)
             
             if error == nil {
                 for object in objects {
-                    
                     self.barName.append(object["name"] as String)
                     self.barIDs.append(object as PFObject)
-
                 }
-                
                 self.tableView.reloadData()
                 
             }else {
-                
                 println(error)
             }
-        }
+            
+        })
+        
         
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,12 +71,41 @@ class BarDatabaseTableViewController: UITableViewController {
         cellName.text = barName[indexPath.row]
         cellName.textAlignment = NSTextAlignment.Center
         cellName.textColor = UIColor.whiteColor()
-    
+        
         let cellImage = UIImageView(frame: CGRectMake(0, 0, cell.frame.width, cell.frame.height-2))
-        cellImage.image = UIImage(named: "testimage")
+    
+        // Extracting Bar Cell Image from Parse
+        var imageQuery = PFQuery(className: "PhotoGallery")
+        imageQuery.whereKey("parent", equalTo: barIDs[indexPath.row])
+        imageQuery.findObjectsInBackgroundWithBlock ({
+            (imageObjects: [AnyObject]!, imageError: NSError!) -> Void in
+            
+            if imageError == nil {
+                for imageObject in imageObjects {
+                    
+                    // Extracting UIImage from PFFile
+                    let imageFile = imageObject["imageFile"] as PFFile
+                    imageFile.getDataInBackgroundWithBlock{
+                        (imageData: NSData!, error: NSError!) -> Void in
+                        
+                        if error == nil {
+                            let image = UIImage(data: imageData)
+                            cellImage.image = image
+                        }else {
+                            println(error)
+                        }
+                    }
+
+                }
+                
+            }else {
+                println(imageError)}
+        })
+
+        //cellImage.image = UIImage(named: "testimage")
         cellImage.clipsToBounds = true
         cellImage.contentMode = UIViewContentMode.ScaleAspectFill
-        
+    
         cell.backgroundColor = UIColor.whiteColor()
         
         cell.addSubview(cellImage)
@@ -85,6 +113,7 @@ class BarDatabaseTableViewController: UITableViewController {
         
         return cell
     }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -94,17 +123,12 @@ class BarDatabaseTableViewController: UITableViewController {
             let indexPath = self.tableView.indexPathForSelectedRow()
             vc.barID = barIDs[indexPath!.row]
             
+            }
+    
         }
     
-    }
-    
+}
 
-
-
-        
-        
-    }
-    
 
 
 
