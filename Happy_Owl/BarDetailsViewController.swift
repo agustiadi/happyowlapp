@@ -52,28 +52,33 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         // Bar Name Label View
         let nameLabel = UILabel(frame: CGRectMake(0, nameY, self.view.frame.width, 50))
         nameLabel.text = "   \(barName2!)"
-        nameLabel.backgroundColor = UIColor.blackColor()
-        nameLabel.textColor = UIColor.whiteColor()
+        nameLabel.backgroundColor = UIColor.whiteColor()
+        nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
         // Happy Hour Collection View
         let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
-        happyHourCollectionView.backgroundColor = UIColor.yellowColor()
+        happyHourCollectionView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
+            // Need to add logic for additional happy hours
         
         // Additional Info of Bar Collection View
         let additionalInfoCollectionView = UIView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 80))
-        additionalInfoCollectionView.backgroundColor = UIColor.greenColor()
+        additionalInfoCollectionView.backgroundColor = UIColor.whiteColor()
         
         // Bar Basic Info View
         let basicInfoView = UIView(frame: CGRectMake(0, infoY, self.view.frame.width, 150))
+        basicInfoView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
         let addressLabel = UILabel(frame: CGRectMake(20, 15, self.view.frame.width, 30))
         addressLabel.text = "Address: \(address)"
+        addressLabel.textColor = UIColor.whiteColor()
         
         let regionLabel = UILabel(frame: CGRectMake(20, 55, self.view.frame.width, 30))
         regionLabel.text = "Region: \(region!), Singapore"
+        regionLabel.textColor = UIColor.whiteColor()
         
         let phoneLabel = UILabel(frame: CGRectMake(20, 100, self.view.frame.width, 30))
         phoneLabel.text = "Phone: +65 \(String(phone!))"
+        phoneLabel.textColor = UIColor.whiteColor()
         
         
         basicInfoView.addSubview(addressLabel)
