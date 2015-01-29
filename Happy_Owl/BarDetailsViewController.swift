@@ -9,9 +9,13 @@
 import UIKit
 import MapKit
 
-class BarDetailsViewController: UIViewController, MKMapViewDelegate {
+class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var barID = NSObject()
+    
+    var additionalInfo = [String]()
+    
+    var infoCollectionView: UICollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +43,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         let nameY = imageY + 180
         let happyHourY = nameY + 50
         let additionalInfoY = happyHourY + 100
-        let infoY = additionalInfoY + 80
+        let infoY = additionalInfoY + 110
         let mapY = infoY + 150
         
         
@@ -56,14 +60,26 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
         // Happy Hour Deals Collection View
-        self.getHappyHourDealTimes(barID as PFObject)
+        //self.getHappyHourDealTimes(barID as PFObject)
         let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
         happyHourCollectionView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
             // Need to add logic for additional happy hours
         
         // Additional Info of Bar Collection View
-        let additionalInfoCollectionView = UIView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 80))
-        additionalInfoCollectionView.backgroundColor = UIColor.whiteColor()
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.itemSize = CGSize(width: self.view.frame.width/3-10, height: 100)
+        
+        infoCollectionView = UICollectionView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 110), collectionViewLayout: layout)
+        infoCollectionView!.backgroundColor = UIColor.whiteColor()
+        infoCollectionView!.delegate = self
+        infoCollectionView!.dataSource = self
+        infoCollectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        
+        self.view.addSubview(infoCollectionView!)
+        
+        getAdditionalInfo(barID as PFObject)
         
         // Bar Basic Info View
         let basicInfoView = UIView(frame: CGRectMake(0, infoY, self.view.frame.width, 150))
@@ -110,12 +126,57 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         scrollView.addSubview(barImageView)
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(happyHourCollectionView)
-        scrollView.addSubview(additionalInfoCollectionView)
+        scrollView.addSubview(infoCollectionView!)
         scrollView.addSubview(basicInfoView)
         scrollView.addSubview(map)
         
         self.view.addSubview(scrollView)
         
+        
+    }
+
+    
+    // Function that will govern the Collection View
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
+        cell.backgroundColor = UIColor.whiteColor()
+        
+        let icon = UIImageView()
+        icon.frame = CGRectMake(cell.bounds.width/2-35, 10, 70, 60)
+        switch additionalInfo[indexPath.row]{
+        case "music":
+            icon.image = UIImage(named: "music")
+        case "outdoor":
+            icon.image = UIImage(named: "outdoor_seating")
+        default:
+            icon.image = UIImage(named: "food")
+        }
+        
+        let label = UILabel()
+        label.frame = CGRectMake(cell.bounds.width/2-35, 75, 70, 20)
+        switch additionalInfo[indexPath.row]{
+        case "music":
+            label.text = "Music"
+        case "outdoor":
+            label.text = "Outdoor"
+        case "restaurant":
+            label.text = "Restaurant"
+        default:
+            label.text = "Bar Food"
+        }
+        label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont(name: "Helvetica", size: 10)
+        
+        cell.addSubview(icon)
+        cell.addSubview(label)
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return additionalInfo.count
     }
 
         
@@ -159,6 +220,25 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         let mapURL = NSURL(string: mapURLString)
         
         UIApplication.sharedApplication().openURL(mapURL!)
+        
+    }
+    
+    func getAdditionalInfo(bar: PFObject){
+        
+        var addInfoQuery = PFQuery(className: "Establishment")
+        addInfoQuery.whereKey("objectId", equalTo: bar.objectId)
+        addInfoQuery.findObjectsInBackgroundWithBlock ({
+            (addInfos: [AnyObject]!, addInfoError: NSError!) -> Void in
+            
+            self.additionalInfo.removeAll(keepCapacity: true)
+            
+            if addInfoError == nil {
+                    self.additionalInfo = addInfos[0]["addInfo"] as [String]
+                self.infoCollectionView?.reloadData()
+            } else{
+                println(addInfoError)
+            }
+        })
         
     }
     
@@ -216,8 +296,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func getHappyHourDealTimePeriod(start: String, end: String){
-        
-        
+    
     }
 
     func getBarHappyHourDeal(happyHourTime: PFObject) {
@@ -241,6 +320,8 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
     }
 
+}
+
     /*
     // MARK: - Navigation
 
@@ -251,4 +332,4 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
     }
     */
 
-}
+
