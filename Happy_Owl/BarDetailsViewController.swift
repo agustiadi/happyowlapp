@@ -55,7 +55,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         nameLabel.backgroundColor = UIColor.whiteColor()
         nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
-        // Happy Hour Collection View
+        // Happy Hour Deals Collection View
         let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
         happyHourCollectionView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
             // Need to add logic for additional happy hours
@@ -191,6 +191,30 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
                 println(imageError)}
         })
         
+    }
+    
+    func getBarHappyHourDeal(happyHourTime: PFObject) {
+        
+        // Extracting Happy Hours for a particular bar from Parse
+        println("Querying the database for HappyHourDeals")
+        var happyHourDealQuery = PFQuery(className: "HappyHourDeal")
+        happyHourDealQuery.whereKey("parent", equalTo: happyHourTime)
+        happyHourDealQuery.findObjectsInBackgroundWithBlock({
+            (dealObjects: [AnyObject]!, dealError: NSError!) -> Void in
+            
+            if dealError == nil {
+                
+                println(dealObjects)
+                
+            }else {
+                
+                println(dealError)
+                
+            }
+            
+        })
+        
+
     }
 
     /*
