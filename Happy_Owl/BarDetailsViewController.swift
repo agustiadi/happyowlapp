@@ -56,6 +56,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
         // Happy Hour Deals Collection View
+        self.getHappyHourDealTimes(barID as PFObject)
         let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
         happyHourCollectionView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
             // Need to add logic for additional happy hours
@@ -193,10 +194,35 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    func getHappyHourDealTimes(bar: PFObject){
+        
+        // Extracting Happy Hour Deal Times for a particular bar from Parse
+        var happyHourDealQuery = PFQuery(className: "HappyHourTime")
+        happyHourDealQuery.whereKey("parent", equalTo: bar)
+        happyHourDealQuery.findObjectsInBackgroundWithBlock({
+            (dealTimesObjects: [AnyObject]!, dealTimesError: NSError!) -> Void in
+            
+            if dealTimesError == nil {
+                
+                println(dealTimesObjects)
+                
+            }else {
+                println(dealTimesError)
+            }
+            
+        })
+
+        
+    }
+    
+    func getHappyHourDealTimePeriod(start: String, end: String){
+        
+        
+    }
+
     func getBarHappyHourDeal(happyHourTime: PFObject) {
         
         // Extracting Happy Hours for a particular bar from Parse
-        println("Querying the database for HappyHourDeals")
         var happyHourDealQuery = PFQuery(className: "HappyHourDeal")
         happyHourDealQuery.whereKey("parent", equalTo: happyHourTime)
         happyHourDealQuery.findObjectsInBackgroundWithBlock({
@@ -207,14 +233,12 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate {
                 println(dealObjects)
                 
             }else {
-                
                 println(dealError)
-                
             }
             
         })
         
-
+        
     }
 
     /*
