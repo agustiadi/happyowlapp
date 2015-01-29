@@ -17,6 +17,10 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
     
     var infoCollectionView: UICollectionView?
     
+    var dealsCollectionView: UICollectionView?
+    
+    var deals = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,13 +43,13 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
         
         // Y-position of all the views on this BarDetailsViewController
         let navH = self.navigationController?.navigationBar.frame.height
+        let dealH = CGFloat((deals * 60) + ((deals-1)*10))
         let imageY = navH! + 20
         let nameY = imageY + 180
         let happyHourY = nameY + 50
-        let additionalInfoY = happyHourY + 100
+        let additionalInfoY = happyHourY + dealH
         let infoY = additionalInfoY + 110
         let mapY = infoY + 150
-        
         
         // Bar Image View
         let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 180))
@@ -60,18 +64,27 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
         nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
         
         // Happy Hour Deals Collection View
-        //self.getHappyHourDealTimes(barID as PFObject)
-        let happyHourCollectionView = UIView(frame: CGRectMake(0, happyHourY, self.view.frame.width, 100))
-        happyHourCollectionView.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
-            // Need to add logic for additional happy hours
+        
+        let dealsLayout = UICollectionViewFlowLayout()
+        dealsLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        dealsLayout.itemSize = CGSize(width: self.view.frame.width, height: 60)
+        
+        dealsCollectionView = UICollectionView(frame: CGRectMake(0, happyHourY, self.view.frame.width, dealH), collectionViewLayout: dealsLayout)
+        dealsCollectionView!.backgroundColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
+        dealsCollectionView!.delegate = self
+        dealsCollectionView!.dataSource = self
+        dealsCollectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "dCell")
+        
+        self.view.addSubview(dealsCollectionView!)
+
         
         // Additional Info of Bar Collection View
         
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: self.view.frame.width/3-10, height: 100)
+        let infoLayout = UICollectionViewFlowLayout()
+        infoLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        infoLayout.itemSize = CGSize(width: self.view.frame.width/3-10, height: 100)
         
-        infoCollectionView = UICollectionView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 110), collectionViewLayout: layout)
+        infoCollectionView = UICollectionView(frame: CGRectMake(0, additionalInfoY, self.view.frame.width, 110), collectionViewLayout: infoLayout)
         infoCollectionView!.backgroundColor = UIColor.whiteColor()
         infoCollectionView!.delegate = self
         infoCollectionView!.dataSource = self
@@ -125,7 +138,7 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: mapY + 250)
         scrollView.addSubview(barImageView)
         scrollView.addSubview(nameLabel)
-        scrollView.addSubview(happyHourCollectionView)
+        scrollView.addSubview(dealsCollectionView!)
         scrollView.addSubview(infoCollectionView!)
         scrollView.addSubview(basicInfoView)
         scrollView.addSubview(map)
@@ -134,49 +147,62 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
         
         
     }
-
     
-    // Function that will govern the Collection View
+    // Function that will govern the Additional Info and Deals Collection View
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
-        cell.backgroundColor = UIColor.whiteColor()
-        
-        let icon = UIImageView()
-        icon.frame = CGRectMake(cell.bounds.width/2-35, 10, 70, 60)
-        switch additionalInfo[indexPath.row]{
-        case "music":
-            icon.image = UIImage(named: "music")
-        case "outdoor":
-            icon.image = UIImage(named: "outdoor_seating")
-        default:
-            icon.image = UIImage(named: "food")
+        if collectionView === infoCollectionView {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
+            cell.backgroundColor = UIColor.whiteColor()
+            
+            let icon = UIImageView()
+            icon.frame = CGRectMake(cell.bounds.width/2-35, 10, 70, 60)
+            switch additionalInfo[indexPath.row]{
+            case "music":
+                icon.image = UIImage(named: "music")
+            case "outdoor":
+                icon.image = UIImage(named: "outdoor_seating")
+            default:
+                icon.image = UIImage(named: "food")
+            }
+            
+            let label = UILabel()
+            label.frame = CGRectMake(cell.bounds.width/2-35, 75, 70, 20)
+            switch additionalInfo[indexPath.row]{
+            case "music":
+                label.text = "Music"
+            case "outdoor":
+                label.text = "Outdoor"
+            case "restaurant":
+                label.text = "Restaurant"
+            default:
+                label.text = "Bar Food"
+            }
+            label.textAlignment = NSTextAlignment.Center
+            label.font = UIFont(name: "Helvetica", size: 10)
+            
+            cell.addSubview(icon)
+            cell.addSubview(label)
+            
+            return cell
+            
+        } else {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("dCell", forIndexPath: indexPath) as UICollectionViewCell
+                   cell.backgroundColor = UIColor.grayColor()
+            return cell
         }
-        
-        let label = UILabel()
-        label.frame = CGRectMake(cell.bounds.width/2-35, 75, 70, 20)
-        switch additionalInfo[indexPath.row]{
-        case "music":
-            label.text = "Music"
-        case "outdoor":
-            label.text = "Outdoor"
-        case "restaurant":
-            label.text = "Restaurant"
-        default:
-            label.text = "Bar Food"
-        }
-        label.textAlignment = NSTextAlignment.Center
-        label.font = UIFont(name: "Helvetica", size: 10)
-        
-        cell.addSubview(icon)
-        cell.addSubview(label)
-        
-        return cell
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return additionalInfo.count
+        if collectionView === infoCollectionView {
+            return additionalInfo.count
+        } else {
+            return deals
+        }
+        
+        
     }
 
         
