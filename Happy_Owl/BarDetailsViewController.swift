@@ -45,23 +45,25 @@ class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectio
         let navH = self.navigationController?.navigationBar.frame.height
         let dealH = CGFloat((deals * 60) + ((deals-1)*10))
         let imageY = navH! + 20
-        let nameY = imageY + 180
-        let happyHourY = nameY + 50
+        let nameY = imageY + 200
+        let happyHourY = nameY + 40
         let additionalInfoY = happyHourY + dealH
         let infoY = additionalInfoY + 110
         let mapY = infoY + 150
         
         // Bar Image View
-        let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 180))
+        let barImageView = UIImageView(frame: CGRectMake(0, imageY, self.view.frame.width, 200))
         self.getBarCellImage(barID as PFObject, imageView: barImageView)
         barImageView.clipsToBounds = true
         barImageView.contentMode = UIViewContentMode.ScaleAspectFill
         
         // Bar Name Label View
-        let nameLabel = UILabel(frame: CGRectMake(0, nameY, self.view.frame.width, 50))
+        let nameLabel = UILabel(frame: CGRectMake(0, nameY, self.view.frame.width, 40))
         nameLabel.text = "   \(barName2!)"
         nameLabel.backgroundColor = UIColor.whiteColor()
         nameLabel.textColor = UIColor(red: (40/255.0), green: (100/255.0), blue: (109/255.0), alpha: 1.0)
+        nameLabel.font = UIFont(name: "HelveticaNeue",
+            size: 20.0)
         
         // Happy Hour Deals Collection View
         
