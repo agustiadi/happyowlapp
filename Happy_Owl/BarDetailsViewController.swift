@@ -11,6 +11,8 @@ import MapKit
 
 class BarDetailsViewController: UIViewController, MKMapViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
+    //testgithub
+    
     var barID = NSObject()
     
     var additionalInfo = [String]()
